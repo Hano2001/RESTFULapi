@@ -10,7 +10,7 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header("Referrer-Policy: no-referrer");
 $array = [];
-if(isset($_GET)){
+if(!empty($_GET)){
 
 
 
@@ -59,9 +59,6 @@ echo json_encode($array);
 }
 
 else{
-    foreach($products as $item => $key){
-        array_push($array, $key);
-    }
-    echo json_encode($array);
+    echo json_encode($products);
   
 }
