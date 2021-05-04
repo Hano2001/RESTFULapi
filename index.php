@@ -11,6 +11,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Referrer-Policy: no-referrer");
 $array = [];
 if (!isset($_GET["category"]) && !isset($_GET["show"])) {
+    shuffle($products);
     echo json_encode($products);
 } else {
 
@@ -48,6 +49,6 @@ if (!isset($_GET["category"]) && !isset($_GET["show"])) {
             }
         }
     }
-
+    shuffle($array);
     echo json_encode($array);
 }
